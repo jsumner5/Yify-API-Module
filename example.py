@@ -1,7 +1,7 @@
 from Yifi import Yifi;
 #create a instance of YifiApi
-YTS = Yifi()
-#search all movies for the keywords I am
-YTS.searchMovies("I am ")
-#get the url for the movie I am Legend
-YTS.fetchMovieUrl(1551)
+YA = Yifi()
+#search yifi with the term "titanic"
+YA.searchMovies("titanic")
+#pass the movie id of titanic to print the url of it
+YA.fetchMovieUrl(3897)
