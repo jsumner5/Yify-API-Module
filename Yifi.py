@@ -1,31 +1,37 @@
+# Python class that can be used to search the yifi db
+# All results are returned as arrays of dicts
+# Example: {'id': 5548, 'url': 'https://yts.ag/movie/the-abyss-1989', 'title': 'The Abyss'}
 import requests;
 class Yifi:
 
-    #list the latest n(10 by default) movies released on the yifi website
-    def fetchLatestMovies(self, limit=10):
+    # Returns an array of the latest n(10 by default) movies released on the yifi website, each movie as a dict
+    def getLatestMovies(self, limit=10):
         listLatestMovies = requests.get('https://yts.ag/api/v2/list_movies.json?limit=%d'%limit).json()
+        results = []
         listLatestMovies = listLatestMovies['data']['movies']
         for movie in listLatestMovies:
-            print(movie['title'], ' Id:', movie['id'])
+            dictmovie = {}
+            dictmovie.update({'title': movie['title'], 'id': movie['id'], 'url': movie['url']})
+            results.append(dictmovie)
+        return results
 
-    # will search all the movies on the yifi website
-    def searchMovies(self, searchTerm):
-        listMovies = requests.get('https://yts.ag/api/v2/list_movies.json?quality=720p&query_term='+searchTerm).json()
+
+
+    # Search movies using term and returns an array of movies, each movie as a dict
+    def getSearchMovies(self, searchTerm):
+        listMovies = requests.get('https://yts.ag/api/v2/list_movies.json?quality=720p&query_term=' + searchTerm).json()
+        results =[]
         mCount = listMovies['data']['movie_count']
-        if(mCount<1):
-            print('no results found for: ',searchTerm)
+        if (mCount < 1):
+            print('no results found for: ', searchTerm)
             return
         listMovies = listMovies['data']['movies']
-        print('Found ',mCount,' movies')
+        print('Found ', mCount, ' movies')
         for movie in listMovies:
-            print(movie['title'],' Id:',movie['id'])
-
-    #return the url of a movie, takes movie id as param
-    def fetchMovieUrl(self,movieId):
-        fetchMovie = requests.get('https://yts.ag/api/v2/movie_details.json?movie_id=%d'%movieId).json()
-        fetchMovie = fetchMovie['data']['movie']
-        print(fetchMovie['title'], ' Id:', fetchMovie['id'], ' url:', fetchMovie['url'])
-        return fetchMovie['url']
+            dictmovie={}
+            dictmovie.update({'title':movie['title'],'id':movie['id'],'url':movie['url']})
+            results.append(dictmovie)
+        return results
 
 
 
