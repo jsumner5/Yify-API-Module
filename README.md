@@ -1,4 +1,4 @@
-# Yify Torrent Library (API wrapper)
+# Yify Library (Yify Movie API Wrapper)
 ## Dependencies:
 *requests
 ## Easy install:
