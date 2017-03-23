@@ -1,9 +1,11 @@
 # Yify Module/Library (Yify Movie API Wrapper)
 ## Dependencies:
-*requests
+* requests
 ## Easy install:
-coming soon :)
-For now download the zip
+* pip install coming soon :)
+* For now download the zip
+* All you need is Yify.py
+* See example below
 
 ## Example:
 ```
