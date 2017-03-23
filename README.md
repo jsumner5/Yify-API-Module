@@ -1,3 +1,7 @@
 # Yify Torrent Library (API wrapper)
-## dependencies
+## dependencies:
+*requests
+## how to install:
+coming soon :)
 
+## example:
