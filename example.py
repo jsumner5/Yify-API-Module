@@ -1,11 +1,11 @@
-from Yifi import Yifi
-# Create a instance of YifiApi
-YA = Yifi()
-# Assigne searchTerm to "The Abyss"
-searchTerm="The Abyss"
+from Yify import *
+# Create a instance of Yify
+yify = Yify()
 
-# assign movies to the returned array
-movies = YA.getSearchMovies(searchTerm)
+
+# Assign movies to the returned array
+movies = yify.get_movies_by_term('Star Wars')
+
 # Iterate through movies and print the results
 for movie in movies:
     print(movie)
