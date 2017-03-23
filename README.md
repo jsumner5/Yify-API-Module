@@ -1,4 +1,4 @@
-# Yify Library (Yify Movie API Wrapper)
+# Yify Module/Library (Yify Movie API Wrapper)
 ## Dependencies:
 *requests
 ## Easy install:
