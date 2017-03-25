@@ -22,7 +22,7 @@ movies = yify.get_movies_by_term('Star Wars')
 for movie in movies:
     print(movie)
 ```
-results:
+Results:
 ```
 {'title': 'Star Wars: Episode VII - The Force Awakens', 'id': 5315, 'url': 'https://yts.ag/movie/star-wars-episode-vii-the-force-awakens-2015'}
 {'title': 'Star Wars: Episode VI - Return of the Jedi', 'id': 2863, 'url': 'https://yts.ag/movie/star-wars-episode-vi-return-of-the-jedi-1983'}
@@ -32,4 +32,11 @@ results:
 {'title': 'Star Wars: Episode I - The Phantom Menace', 'id': 2859, 'url': 'https://yts.ag/movie/star-wars-episode-i-the-phantom-menace-1999'}
 {'title': 'Star Wars: Episode IV - A New Hope', 'id': 2858, 'url': 'https://yts.ag/movie/star-wars-episode-iv-a-new-hope-1977'}
 ```
-Thats It !
+### Get the Latest Movies:
+```
+movies = yify.get_latest_movies()
+```
+### Get movie by search term:
+```
+movies = yify.get_movies_by_term('Star Wars')
+```
